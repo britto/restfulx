@@ -1,16 +1,18 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title><%= project_name %></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		<script type="text/javascript" src="javascripts/swfobject.js"></script>
-    <%%= swfobject("/bin/<%= flex_project_name %>.swf") %>
-		<style>
-		  body { margin: 0px; overflow: hidden; }
+		<%%= javascript_include_tag 'swfobject' %>
+		<%%= swfobject compute_public_path("<%= flex_project_name %>.swf", "bin") %>
+		<style type="text/css" media="screen">
+			html, body, #flashContent { height:100%; }
+			body { margin:0; padding:0; overflow:hidden; }
 		</style>
 	</head>
 	<body>
 		<div id="flashContent">
-			<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a></p>
+			<a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" /></a>
 		</div>
 	</body>
 </html>

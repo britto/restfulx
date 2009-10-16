@@ -4,7 +4,7 @@
 		<title><%= project_name %></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<%%= javascript_include_tag 'swfobject' %>
-		<%%= swfobject compute_public_path("<%= flex_project_name %>.swf", "bin") %>
+		<%%= swfobject compute_public_path("<%= flex_project_name %>", "bin", "swf") %>
 		<style type="text/css" media="screen">
 			html, body, #flashContent { height:100%; }
 			body { margin:0; padding:0; overflow:hidden; }

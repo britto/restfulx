@@ -8,7 +8,7 @@ module SWFHelper
                            :height => '100%',
                            :id => 'flashContent',
                            :version => '9.0.0',
-                           :express_install_swf => '/expressInstall.swf',
+                           :express_install_swf => compute_public_path('/expressInstall.swf', ''),
                            :flash_vars => nil,
                            :params => { },
                            :attributes => { },

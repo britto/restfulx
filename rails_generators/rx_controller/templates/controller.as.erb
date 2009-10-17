@@ -27,6 +27,8 @@ package <%= base_package %>.controllers {
     public static function initialize(extraServices:Array = null, 
       defaultServiceId:int = -1, airDatabaseName:String = null):void {
       if (!RxUtils.isEmpty(airDatabaseName)) Rx.airDatabaseName = airDatabaseName;
+      var rootUrl:String = Application.application.parameters.http_root_url;
+      if (!RxUtils.isEmpty(rootUrl)) Rx.httpRootUrl = rootUrl;
       controller = new <%= command_controller_name %>(new SingletonEnforcer, 
         extraServices, defaultServiceId);
 			Rx.sessionToken = Application.application.parameters.session_token;

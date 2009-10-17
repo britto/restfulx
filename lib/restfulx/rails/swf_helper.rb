@@ -40,6 +40,9 @@ module SWFHelper
           params[:flash_vars].reverse_merge!(:session_token => session.session_id)
         end
       end        
+      if ActionController::Base.relative_url_root
+        params[:flash_vars].reverse_merge!(:http_root_url => "#{ActionController::Base.relative_url_root}/")
+      end
     end          
     
     js_params += [params[:flash_vars], params[:params], params[:attributes]].collect do |hash_or_string|
